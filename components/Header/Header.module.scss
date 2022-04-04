@@ -1,0 +1,28 @@
+@import '../../styles/variables.module.scss';
+@import '../../styles/mixins.scss';
+
+.header{
+    padding-left:map-get($map: $page-padding, $key: phone );
+    padding-right:map-get($map: $page-padding, $key: phone );
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .fullMenu{
+        display: flex;
+        @include for-phone{
+            display: none;
+        }
+
+        ul {
+            list-style: none;
+            li{
+                display: inline;
+            }
+        }
+    }
+
+   
+
+
+}

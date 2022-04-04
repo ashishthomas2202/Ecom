@@ -1,0 +1,17 @@
+@import './variables.module.scss';
+
+@mixin for-phone {
+    @media (max-width: $phone) { @content; }
+  }
+  @mixin for-tablet {
+    @media (max-width: $tablet) { @content; }
+  }
+  @mixin for-laptop {
+    @media (max-width: $laptop){ @content; }
+  }
+  @mixin for-desktop {
+    @media (max-width: $desktop) { @content; }
+  }
+  @mixin for-big-desktop {
+    @media (min-width: calc($desktop + 1px)) { @content; }
+  }
