@@ -8,16 +8,39 @@
     justify-content: space-between;
     align-items: center;
 
+    .round{
+        height: 40px;
+        width: 40px;
+        font-size: 100%;
+        border-radius: 50%;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 1;
+        transition: 0.2s ease-in;
+
+        &:hover{
+        opacity: 0.8;
+        font-size: 120%;
+        // zoom: 0.5
+            // filter: brightness(200%);
+        }
+    }
+
     .fullMenu{
         display: flex;
+        align-items: center;
         @include for-phone{
             display: none;
         }
 
         ul {
             list-style: none;
+            display: flex;
+        align-items: center;
             li{
                 display: inline;
+                cursor: pointer;
             }
         }
     }

@@ -14,3 +14,14 @@ $page-padding:(
     big-desktop:50px
 
 );
+
+
+// color
+$primary-color:#E63946;
+$secondary-color:#0B1423;
+
+
+:export{
+    primaryColor: $primary-color;
+    secondaryColor:$secondary-color;
+}

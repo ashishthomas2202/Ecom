@@ -1,3 +1,4 @@
+import variables from '../styles/variables.module.scss';
 export const Brand = {
   name: 'Ecommerce',
   fullname: 'Ecommerce LLC',
@@ -27,12 +28,22 @@ export const Header = {
     {
       name: 'Favorite',
       link: '/favorite',
-      iconLink: '',
+      faIcon: 'fa-heart',
+      container: {
+        shape: 'round',
+        backgroundColor: variables.primaryColor,
+        color: '#ffffff',
+      },
     },
     {
       name: 'ShoppingBag',
       link: '/shoppingBag',
-      iconLink: '',
+      faIcon: 'fa-bag-shopping',
+      container: {
+        shape: 'round',
+        backgroundColor: variables.secondaryColor,
+        color: '#ffffff',
+      },
     },
   ],
 };
