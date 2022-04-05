@@ -1,20 +1,48 @@
+// Break Points
 $phone:480px;
-$tablet:768px;
+$tablet-portrait:680px;
+$tablet-landscape:800px;
 $laptop:1024px;
 $desktop:1200px;
 $big-desktop:1500px;
 
 
-// Layout
+// Layout 
 $page-padding:(
-    phone:10px,
-    tablet:20px,
+    phone:10px,//not used
+    tablet-portrait:35px,//not used
+    tablet-landscape:20px,//not used
     laptop:30px,
-    desktop:40px,
-    big-desktop:50px
-
+    desktop:80px,
+    big-desktop:50px//not used
 );
 
+$page-min-width: 200px;
+$page-max-width: $big-desktop;
+
+
+
+//Header
+$header-height:63px;
+$header-max-width:$page-max-width;
+
+$menu-gap:(
+    phone:10px,//not used
+    tablet-portrait:20px,//not used
+    tablet-landscape:10px,
+    laptop:20px,
+    desktop:35px,
+    big-desktop:500px//not used
+);
+
+
+// $menu-gap:(
+//     phone:10px,//not used
+//     tablet:20px,//not used
+//     laptop:60px,
+//     desktop:90px,
+//     big-desktop:500px//not used
+// );
 
 // color
 $primary-color:#E63946;

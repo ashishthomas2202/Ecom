@@ -2,11 +2,50 @@
 @import '../../styles/mixins.scss';
 
 .header{
-    padding-left:map-get($map: $page-padding, $key: phone );
-    padding-right:map-get($map: $page-padding, $key: phone );
+    height:$header-height;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    @include for-phone{
+        padding-left:map-get($map: $page-padding, $key: phone );
+        padding-right:map-get($map: $page-padding, $key: phone );
+    }
+    @include for-tablet-portrait{
+        padding-left:map-get($map: $page-padding, $key: tablet-portrait );
+        padding-right:map-get($map: $page-padding, $key: tablet-portrait );
+    }
+    @include for-tablet-landscape{
+        padding-left:map-get($map: $page-padding, $key: tablet-landscape );
+        padding-right:map-get($map: $page-padding, $key: tablet-landscape );
+    }
+    @include for-laptop{
+        padding-left:map-get($map: $page-padding, $key: laptop );
+        padding-right:map-get($map: $page-padding, $key: laptop );
+    }
+    @include for-desktop{
+        padding-left:map-get($map: $page-padding, $key: desktop );
+        padding-right:map-get($map: $page-padding, $key: desktop );
+    }
+
+    .appbar{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include for-tablet-landscape{
+            display: none;
+        }
+    }
+
+    .search{
+        height:40px;
+        width: 40px;
+        font-size: 1.2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
     .round{
         height: 40px;
@@ -18,32 +57,63 @@
         align-items: center;
         opacity: 1;
         transition: 0.2s ease-in;
+        @media (hover: hover) {
+            &:hover{
+                opacity: 0.8;
+                font-size: 120%;
+            }
+        }
+        
+    }
 
-        &:hover{
-        opacity: 0.8;
-        font-size: 120%;
-        // zoom: 0.5
-            // filter: brightness(200%);
+    
+
+    .pill{
+        height: 40px;
+        width: 90px;
+        border-radius: 40px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 1;
+        transition: 0.2s ease-in;
+        @media (hover: hover) {
+            &:hover{
+            opacity: 0.8;
+            }
         }
     }
 
     .fullMenu{
-        display: flex;
-        align-items: center;
+        max-width: $header-max-width;
+        width: 100%;
         @include for-phone{
             display: none;
         }
-
-        ul {
-            list-style: none;
+        @include for-tablet-landscape{
             display: flex;
-        align-items: center;
-            li{
-                display: inline;
-                cursor: pointer;
-            }
+            justify-content: space-between;
+            align-items: center;
         }
+
     }
+
+    
+
+    ul {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        @include for-tablet-portrait{
+            gap:map-get($map: $menu-gap, $key:tablet-landscape );
+        }
+        @include for-laptop{
+            gap:map-get($map: $menu-gap, $key:laptop );
+        }
+        @include for-desktop{
+            gap:map-get($map: $menu-gap, $key:desktop );
+        }
+    }  
 
    
 

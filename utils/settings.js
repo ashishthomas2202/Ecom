@@ -46,4 +46,16 @@ export const Header = {
       },
     },
   ],
+
+  user: [
+    {
+      name: 'Sign In',
+      link: '/auth/signin',
+      container: {
+        shape: 'pill',
+        backgroundColor: variables.secondaryColor,
+        color: '#ffffff',
+      },
+    },
+  ],
 };
