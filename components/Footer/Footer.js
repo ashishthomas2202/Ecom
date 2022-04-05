@@ -103,11 +103,17 @@ export default function Footer() {
       </ul>
     </div>
   );
+
+  let copyright = (
+    <div className={styles.copyright}>{`©${new Date().getFullYear()} ${
+      Brand.fullname
+    }`}</div>
+  );
   return (
     <div className={styles.footer}>
       {toolbar}
       {footer}
-      {}
+      {copyright}
     </div>
   );
 }

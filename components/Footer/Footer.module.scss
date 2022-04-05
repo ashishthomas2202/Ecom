@@ -11,11 +11,11 @@
         position:fixed;
         bottom: 0;
         display: flex;
+        flex-flow: column;
         justify-content: center;
         align-items: center;
         padding-left:map-get($map: $page-padding, $key: phone );
         padding-right:map-get($map: $page-padding, $key: phone );
-        
         .toolbar{
             height: $footer-toolbar-height;
             width: 100%;
@@ -33,6 +33,9 @@
         }
 
         .footerWrapper{
+            display: none;
+        }
+        .copyright{
             display: none;
         }
     }
@@ -54,7 +57,7 @@
             width: 100%;
             display: flex;
             justify-content: space-between;
-            margin:$footer-margin-y auto;
+            margin-top:$footer-margin-y;
            
             ul{
                 list-style: none;
@@ -71,7 +74,8 @@
                     }
                     &:nth-child(2){
                         font-size: 0.7rem;
-                        opacity: 0.2;
+                        letter-spacing: 0.2px;
+                        opacity: 0.5;
                         cursor:default;
                     }
                 }
@@ -93,7 +97,13 @@
                 }
             }
         }
-        
+        .copyright{
+            font-size: 0.9rem;
+            opacity: 0.7;
+            display: initial;
+            padding-top: 1rem ;
+            margin-bottom: $footer-margin-y;
+        }
     }
     @include for-laptop{
         padding-left:map-get($map: $page-padding, $key: laptop );
