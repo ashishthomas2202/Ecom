@@ -1,20 +1,20 @@
 @import './variables.module.scss';
 
 @mixin for-phone {
-    @media (min-width: 0px) { @content; }
-  }
-  @mixin for-tablet-portrait {
-    @media (min-width: $phone) { @content; }
-  }
-  @mixin for-tablet-landscape {
-    @media (min-width: $tablet-portrait) { @content; }
-  }
-  @mixin for-laptop {
-    @media (min-width: $tablet-landscape){ @content; }
-  }
-  @mixin for-desktop {
-    @media (min-width: $laptop) { @content; }
-  }
-  @mixin for-big-desktop {
-    @media (min-width: $desktop) { @content; }
-  }
+  @media (min-width: 0px) { @content; }
+}
+@mixin for-tablet-portrait {
+  @media (min-width: $phone) { @content; }
+}
+@mixin for-tablet-landscape {
+  @media (min-width: $tablet-portrait) { @content; }
+}
+@mixin for-laptop {
+  @media (min-width: $tablet-landscape){ @content; }
+}
+@mixin for-desktop {
+  @media (min-width: $laptop) { @content; }
+}
+@mixin for-big-desktop {
+  @media (min-width: $desktop) { @content; }
+}

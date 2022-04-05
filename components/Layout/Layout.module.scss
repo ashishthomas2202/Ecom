@@ -13,8 +13,14 @@
     .container{
         width: $header-width;
         padding-top: $page-padding-top;
+        padding-bottom: 1rem;
         display: flex;
         justify-content: center;
+
+        .wrapper{
+            width: 100%;
+            max-width: $page-max-width;
+        }
         @include for-phone{
             min-height:$page-min-height;
             padding-left:map-get($map: $page-padding, $key: phone );

@@ -6,9 +6,9 @@ $secondary-color:#0B1423;
 $phone:480px;
 $tablet-portrait:680px;
 $tablet-landscape:800px;
-$laptop:1024px;
-$desktop:1200px;
-$big-desktop:1500px;
+$laptop:1124px;
+$desktop:1400px;
+$big-desktop:2000px;
 
 
 // Layout 
@@ -16,8 +16,8 @@ $page-padding:(
     phone:10px,
     tablet-portrait:50px,
     tablet-landscape:60px,
-    laptop:90px,
-    desktop:130px,
+    laptop:70px,
+    desktop:80px,
 );
 $page-min-width: 200px;
 $page-max-width: $big-desktop;
@@ -41,7 +41,9 @@ $menu-gap:(
 $footer-color: $secondary-color;
 $footer-font-color: #ffffff;
 $footer-toolbar-height:55px;
+$footer-max-width:1200px;
 $footer-margin-y:30px;
+
 
 
 // Page Settings
@@ -56,4 +58,12 @@ $page-min-height:calc(100vh - $footer-toolbar-height);
 :export{
     primaryColor: $primary-color;
     secondaryColor:$secondary-color;
+
+    // Break Points
+    phone:$phone;
+    tabletPortrait:$tablet-portrait;
+    tabletLandscape:$tablet-landscape;
+    laptop:$laptop;
+    desktop:$desktop;
+    bigDesktop:$big-desktop;
 }

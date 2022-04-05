@@ -113,7 +113,7 @@
         padding-left:map-get($map: $page-padding, $key: desktop );
         padding-right:map-get($map: $page-padding, $key: desktop );
         .footerWrapper{
-            max-width: 1000px;
+            max-width: $footer-max-width;
         }
     }
 }

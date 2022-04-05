@@ -12,7 +12,9 @@ export default function Layout({ title, children }) {
         <title>{`${Brand.name}${title ? ' | ' + title : ''}`}</title>
       </Head>
       <Header />
-      <div className={styles.container}>{children}</div>
+      <div className={styles.container}>
+        <div className={styles.wrapper}>{children}</div>
+      </div>
       <Footer />
     </div>
   );
