@@ -1,3 +1,103 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.module.scss';
 .footer{
-    
+    background-color: $footer-color;
+    color:$footer-font-color;
+
+    @include for-phone{
+        
+        width: 100vw;
+        position:fixed;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left:map-get($map: $page-padding, $key: phone );
+        padding-right:map-get($map: $page-padding, $key: phone );
+        
+        .toolbar{
+            height: $footer-toolbar-height;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            @include for-tablet-landscape{
+                display: none;
+            }
+            li{
+                padding: 0  10px;
+                display: inline-flex;
+            }
+            
+        }
+
+        .footerWrapper{
+            display: none;
+        }
+    }
+
+    @include for-tablet-portrait{
+        padding-left:map-get($map: $page-padding, $key: tablet-portrait );
+        padding-right:map-get($map: $page-padding, $key: tablet-portrait );
+    }
+    @include for-tablet-landscape{
+        height: initial;
+        position: initial;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left:map-get($map: $page-padding, $key: tablet-landscape );
+        padding-right:map-get($map: $page-padding, $key: tablet-landscape );
+
+        .footerWrapper{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin:$footer-margin-y auto;
+           
+            ul{
+                list-style: none;
+            }
+
+            .branding{
+                max-width: 220px;
+                li{
+                    &:nth-child(1){
+                         font-size: 1.2rem;
+                    }
+                    &:nth-child(2){
+                        font-size: 0.7rem;
+                        opacity: 0.2;
+                    }
+                }
+            }
+
+            .footerMenu{
+                li{
+                    font-size: 0.6rem;
+                    opacity: 0.5;
+                    padding-bottom: 0.2rem;
+                    
+                    &:nth-child(1){ 
+                       font-size: 0.7rem;
+                       opacity: 1;
+                       padding-bottom: 0.6rem;
+
+                    }
+                }
+            }
+        }
+        
+    }
+    @include for-laptop{
+        padding-left:map-get($map: $page-padding, $key: laptop );
+        padding-right:map-get($map: $page-padding, $key: laptop );
+    }
+    @include for-desktop{
+        padding-left:map-get($map: $page-padding, $key: desktop );
+        padding-right:map-get($map: $page-padding, $key: desktop );
+        .footerWrapper{
+            max-width: 1000px;
+        }
+    }
 }

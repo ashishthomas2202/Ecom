@@ -1,3 +1,7 @@
+// color
+$primary-color:#E63946;
+$secondary-color:#0B1423;
+
 // Break Points
 $phone:480px;
 $tablet-portrait:680px;
@@ -10,10 +14,10 @@ $big-desktop:1500px;
 // Layout 
 $page-padding:(
     phone:10px,
-    tablet-portrait:35px,
-    tablet-landscape:20px,
-    laptop:30px,
-    desktop:30px,
+    tablet-portrait:50px,
+    tablet-landscape:60px,
+    laptop:90px,
+    desktop:130px,
 );
 $page-min-width: 200px;
 $page-max-width: $big-desktop;
@@ -33,16 +37,20 @@ $menu-gap:(
     big-desktop:500px//not used
 );
 
+//Footer
+$footer-color: $secondary-color;
+$footer-font-color: #ffffff;
+$footer-toolbar-height:55px;
+$footer-margin-y:30px;
+
 
 // Page Settings
 $page-padding-top:$header-height;
-$page-min-height:calc(100vh - $header-height);
+$page-min-height:calc(100vh - $footer-toolbar-height);
 
 
 
-// color
-$primary-color:#E63946;
-$secondary-color:#0B1423;
+
 
 
 :export{

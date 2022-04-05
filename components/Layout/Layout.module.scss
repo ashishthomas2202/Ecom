@@ -25,11 +25,11 @@
             padding-right:map-get($map: $page-padding, $key: tablet-portrait );
         }
         @include for-tablet-landscape{
+            min-height: 80vh;
             padding-left:map-get($map: $page-padding, $key: tablet-landscape );
             padding-right:map-get($map: $page-padding, $key: tablet-landscape );
         }
         @include for-laptop{
-            min-height:100%;    
             padding-left:map-get($map: $page-padding, $key: laptop );
             padding-right:map-get($map: $page-padding, $key: laptop );
         }

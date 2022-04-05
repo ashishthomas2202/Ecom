@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Header.module.scss';
-import { Brand, Header as HeaderSettings } from '../../utils/settings';
+import { Brand, Header as HeaderSettings, Pages } from '../../utils/settings';
 //import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 //import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link';
@@ -10,7 +10,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function Header() {
   /********************* Brand *********************/
-  let brand = <div className={styles.brand}>{Brand.name}</div>;
+  let brand = (
+    <div className={styles.brand}>
+      <Link href={Pages.landing.link} passHref>
+        {Brand.name}
+      </Link>
+    </div>
+  );
 
   let search = (
     <div className={styles.search}>
@@ -59,8 +65,8 @@ export default function Header() {
 
         if (item.link) {
           element = (
-            <Link href={item.link} passHref>
-              {element}
+            <Link href={item.link}>
+              <span>{element}</span>
             </Link>
           );
         }

@@ -112,6 +112,10 @@
         @include for-desktop{
             gap:map-get($map: $menu-gap, $key:desktop );
         }
+
+        li{
+            cursor: pointer;
+        }
     }  
 
 }
