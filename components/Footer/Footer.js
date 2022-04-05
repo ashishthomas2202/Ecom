@@ -105,9 +105,9 @@ export default function Footer() {
   );
 
   let copyright = (
-    <div className={styles.copyright}>{`©${new Date().getFullYear()} ${
+    <div className={styles.copyright}>{`© ${new Date().getFullYear()} ${
       Brand.fullname
-    }`}</div>
+    }. All Rights Reserved.`}</div>
   );
   return (
     <div className={styles.footer}>
