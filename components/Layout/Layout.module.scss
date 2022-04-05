@@ -13,7 +13,6 @@
     .container{
         width: $header-width;
         padding-top: $page-padding-top;
-        padding-bottom: 1rem;
         display: flex;
         justify-content: center;
 
@@ -25,6 +24,7 @@
             min-height:$page-min-height;
             padding-left:map-get($map: $page-padding, $key: phone );
             padding-right:map-get($map: $page-padding, $key: phone );
+            margin-bottom: $footer-toolbar-height;
         }
         @include for-tablet-portrait{
             padding-left:map-get($map: $page-padding, $key: tablet-portrait );
@@ -34,6 +34,7 @@
             min-height: 80vh;
             padding-left:map-get($map: $page-padding, $key: tablet-landscape );
             padding-right:map-get($map: $page-padding, $key: tablet-landscape );
+            margin-bottom: auto;
         }
         @include for-laptop{
             padding-left:map-get($map: $page-padding, $key: laptop );
