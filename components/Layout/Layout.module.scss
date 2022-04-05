@@ -1,14 +1,42 @@
 @import '../../styles/variables.module.scss';
+@import '../../styles/mixins.scss';
 
 .layout{
     min-height:100vh;
-
     max-width: 100vw;
     min-width: $page-min-width;
     overflow-x: hidden;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
 
     .container{
-        padding-left:map-get($map: $page-padding, $key: phone );
-        padding-right:map-get($map: $page-padding, $key: phone );
+        width: $header-width;
+        padding-top: $page-padding-top;
+        display: flex;
+        justify-content: center;
+        @include for-phone{
+            min-height:$page-min-height;
+            padding-left:map-get($map: $page-padding, $key: phone );
+            padding-right:map-get($map: $page-padding, $key: phone );
+        }
+        @include for-tablet-portrait{
+            padding-left:map-get($map: $page-padding, $key: tablet-portrait );
+            padding-right:map-get($map: $page-padding, $key: tablet-portrait );
+        }
+        @include for-tablet-landscape{
+            padding-left:map-get($map: $page-padding, $key: tablet-landscape );
+            padding-right:map-get($map: $page-padding, $key: tablet-landscape );
+        }
+        @include for-laptop{
+            min-height:100%;    
+            padding-left:map-get($map: $page-padding, $key: laptop );
+            padding-right:map-get($map: $page-padding, $key: laptop );
+        }
+        @include for-desktop{
+            padding-left:map-get($map: $page-padding, $key: desktop );
+            padding-right:map-get($map: $page-padding, $key: desktop );
+        }        
     }
+
 }

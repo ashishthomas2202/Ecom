@@ -9,23 +9,21 @@ $big-desktop:1500px;
 
 // Layout 
 $page-padding:(
-    phone:10px,//not used
-    tablet-portrait:35px,//not used
-    tablet-landscape:20px,//not used
+    phone:10px,
+    tablet-portrait:35px,
+    tablet-landscape:20px,
     laptop:30px,
-    desktop:80px,
-    big-desktop:50px//not used
+    desktop:30px,
 );
-
 $page-min-width: 200px;
 $page-max-width: $big-desktop;
 
 
-
 //Header
+$header-color:#ffffff;
 $header-height:63px;
+$header-width:100vw;
 $header-max-width:$page-max-width;
-
 $menu-gap:(
     phone:10px,//not used
     tablet-portrait:20px,//not used
@@ -36,13 +34,11 @@ $menu-gap:(
 );
 
 
-// $menu-gap:(
-//     phone:10px,//not used
-//     tablet:20px,//not used
-//     laptop:60px,
-//     desktop:90px,
-//     big-desktop:500px//not used
-// );
+// Page Settings
+$page-padding-top:$header-height;
+$page-min-height:calc(100vh - $header-height);
+
+
 
 // color
 $primary-color:#E63946;

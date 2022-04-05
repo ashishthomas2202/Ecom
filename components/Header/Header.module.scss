@@ -3,6 +3,10 @@
 
 .header{
     height:$header-height;
+    width: $header-width;
+    background-color: $header-color;
+    position: fixed;
+    top:0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,7 +36,6 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-
         @include for-tablet-landscape{
             display: none;
         }
@@ -66,8 +69,6 @@
         
     }
 
-    
-
     .pill{
         height: 40px;
         width: 90px;
@@ -98,8 +99,6 @@
 
     }
 
-    
-
     ul {
         list-style: none;
         display: flex;
@@ -114,8 +113,5 @@
             gap:map-get($map: $menu-gap, $key:desktop );
         }
     }  
-
-   
-
 
 }
