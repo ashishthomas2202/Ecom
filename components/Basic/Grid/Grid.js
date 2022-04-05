@@ -36,7 +36,6 @@ export default function Grid({
         window.innerWidth > 0 &&
         window.innerWidth <= parseInt(variables.phone)
       ) {
-        // console.log('Phone');
         setStyle({
           ...style,
           gridTemplateColumns: `repeat(${columns.phone},1fr)`,
@@ -46,7 +45,6 @@ export default function Grid({
         window.innerWidth > parseInt(variables.phone) &&
         window.innerWidth <= parseInt(variables.tabletPortrait)
       ) {
-        // console.log('Tablet Portrait');
         setStyle({
           ...style,
           gridTemplateColumns: `repeat(${columns.tabletPortrait},1fr)`,
@@ -56,7 +54,6 @@ export default function Grid({
         window.innerWidth > parseInt(variables.tabletPortrait) &&
         window.innerWidth <= parseInt(variables.tabletLandscape)
       ) {
-        // console.log('Tablet Landscape');
         setStyle({
           ...style,
           gridTemplateColumns: `repeat(${columns.tabletLandscape},1fr)`,
@@ -66,7 +63,6 @@ export default function Grid({
         window.innerWidth > parseInt(variables.tabletLandscape) &&
         window.innerWidth <= parseInt(variables.laptop)
       ) {
-        // console.log('Laptop');
         setStyle({
           ...style,
           gridTemplateColumns: `repeat(${columns.laptop},1fr)`,
@@ -81,9 +77,7 @@ export default function Grid({
           gridTemplateColumns: `repeat(${columns.desktop},1fr)`,
           gap: gap.desktop,
         });
-        // console.log('Desktop');
       } else if (window.innerWidth > parseInt(variables.desktop)) {
-        // console.log('Big Desktop');
         setStyle({
           ...style,
           gridTemplateColumns: `repeat(${columns.bigDesktop},1fr)`,
