@@ -16,65 +16,85 @@
             background-position: center;
             background-size: cover;
             position:relative;
+            user-select: none;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            
+            .linkOverlay{
+                width: 100%;
+                height:100%;
+            }
+
+            div{
+                border-radius: 50%;
+                position:absolute;
+                right:0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+            }
 
             .favorite{
                 height:clamp(25px,5vw,45px);
                 width: clamp(25px,5vw,45px);
-                color: $secondary-color;
-                font-size: 0.8rem;
-                border-radius: 50%;
                 background-color: #ffffff;
                 filter:drop-shadow(0 0 14px #00000010); 
-                position:absolute;
-                right:0;
-                display: flex;
-                justify-content: center;
-                align-items: center;
                 margin: clamp(2px, 2vw, 12px);
+                .normal{
+                    color: $secondary-color;
+                    font-size: 0.8rem;
+                    transition: 0.1s ease-in;
+                }
+                .selected{
+                    color: $primary-color;
+                    font-size: 1rem;
+                    transition: 0.1s ease-out;
+                }
             }
 
             .addToCart{
-                height:clamp(25px,5vw,45px);
-                width: clamp(25px,5vw,45px);
+                height:clamp(25px,5vw,50px);
+                width: clamp(25px,5vw,50px);
                 color: #ffffff;
-                font-size: clamp(0.8em, 5vw, 1em);
-                border-radius: 50%;
+                font-size: clamp(0.8em, 5vw, 1.2em);
                 background-color: $primary-color;
                 filter:drop-shadow(0 0 8px #00000066); 
-                position:absolute;
-                right:0;
                 bottom: 0;
-                display: flex;
-                justify-content: center;
-                align-items: center;
                 margin: clamp(2px, 2vw, 12px);
             }
 
 
         }
-        .name{
-            font-size: clamp(0.5em, 5vw, 0.9em);
-        }
-        .prices {
-            display: flex;
-            align-items: center;
-            gap: 5px;
+        .details{
+            cursor: pointer;
+            .name{
+                padding-top: clamp(1px, 1vw, 5px);
+                font-size: clamp(0.5em, 5vw, 0.9em);
+            }
+            .prices {
+                padding-top: clamp(1px, 1vw, 5px);
+                display: flex;
+                align-items: center;
+                gap: 5px;
 
-            div{
-                font-size: clamp(0.4em, 5vw, 0.8em);
-                line-height: 0.5rem;
-            }
+                div{
+                    font-size: clamp(0.4em, 5vw, 0.8em);
+                    line-height: 0.5rem;
+                }
 
-            .discountedPrice{
-                color:#ffffff;
-                background-color: $product-discount-price-bgcolor;
-                padding: clamp(2px, 2vw, 4px) clamp(2px, 2vw, 6px);
-                border-radius: clamp(2px, 2vw, 6px);
+                .discountedPrice{
+                    color:#ffffff;
+                    background-color: $product-discount-price-bgcolor;
+                    padding: clamp(2px, 2vw, 4px) clamp(2px, 2vw, 6px);
+                    border-radius: clamp(2px, 2vw, 6px);
+                }
+                .strikePrice{
+                    text-decoration: line-through;
+                }
+                
             }
-            .strikePrice{
-                text-decoration: line-through;
-            }
-            
         }
     }
 }

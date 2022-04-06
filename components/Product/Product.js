@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import styles from './Product.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-export default function Product({ data, aspectRatio }) {
+import Link from 'next/link';
+export default function Product({
+  data,
+  aspectRatio,
+  handleAddToCart = () => {},
+}) {
   data = {
+    _id: 'jvhtfrkvytbiu',
     sku: 'DM5671-100',
     name: 'Nike Dri-FIT',
     brand: 'Nike',
@@ -75,6 +80,12 @@ export default function Product({ data, aspectRatio }) {
   //     3:2       |       66.66%
   //     8:5       |       62.5%
 
+  const [favorite, setFavorite] = useState(false);
+  function handleFavoriteClick() {
+    console.log('Favorite', data._id);
+    setFavorite(!favorite);
+  }
+
   const [ratio, setRatio] = useState(177.78);
 
   const [style, setStyle] = useState({
@@ -115,24 +126,38 @@ export default function Product({ data, aspectRatio }) {
           className={styles.image}
           style={{ backgroundImage: `url(${data.images[0].path})` }}
         >
-          <div className={styles.favorite}>
-            <FontAwesomeIcon icon={['fas', 'fa-heart']} />
+          <Link href={`/shop/${data._id}`} passHref>
+            <div className={styles.linkOverlay}></div>
+          </Link>
+          <div className={styles.favorite} onClick={handleFavoriteClick}>
+            <span className={favorite ? styles.selected : styles.normal}>
+              <FontAwesomeIcon icon={['fas', 'fa-heart']} />
+            </span>
           </div>
-          <div className={styles.addToCart}>
+          <div
+            className={styles.addToCart}
+            onClick={() => {
+              handleAddToCart(data._id);
+            }}
+          >
             <FontAwesomeIcon icon={['fas', 'fa-plus']} />
           </div>
         </div>
-        <div className={styles.name}>{data.name ? data.name : ''}</div>
-        <div className={styles.prices}>
-          {data.discountedPrice && (
-            <div className={styles.discountedPrice}>
-              ${data.discountedPrice}
+        <Link href={`/shop/${data._id}`} passHref>
+          <div className={styles.details}>
+            <div className={styles.name}>{data.name ? data.name : ''}</div>
+            <div className={styles.prices}>
+              {data.discountedPrice && (
+                <div className={styles.discountedPrice}>
+                  ${data.discountedPrice}
+                </div>
+              )}
+              <div className={data.discountedPrice ? styles.strikePrice : ''}>
+                ${data.price ? data.price : ''}
+              </div>
             </div>
-          )}
-          <div className={data.discountedPrice ? styles.strikePrice : ''}>
-            ${data.price ? data.price : ''}
           </div>
-        </div>
+        </Link>
       </div>
     </div>
   );
