@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import styles from './Grid.module.scss';
 import variables from '../../../styles/variables.module.scss';
 import Loading from '../Loading/Loading';
 
