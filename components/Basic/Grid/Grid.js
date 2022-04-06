@@ -2,28 +2,39 @@ import React, { useState, useEffect } from 'react';
 import variables from '../../../styles/variables.module.scss';
 import Loading from '../Loading/Loading';
 
-export default function Grid({
-  columns = {
+export default function Grid({ col, gap, children }) {
+  let columns = {
     phone: 2,
     tabletPortrait: 2,
     tabletLandscape: 3,
     laptop: 4,
     desktop: 4,
     bigDesktop: 5,
-  },
-  gap = {
-    phone: '0.3rem',
-    tabletPortrait: '0.4rem',
-    tabletLandscape: '0.5rem',
-    laptop: '0.5rem',
-    desktop: '0.6rem',
-    bigDesktop: '0.7rem',
-  },
-  children,
-}) {
+    ...col,
+  };
+
+  let gaps = {
+    phone: '0.5rem',
+    tabletPortrait: '0.6rem',
+    tabletLandscape: '0.6rem',
+    laptop: '0.7rem',
+    desktop: '0.7rem',
+    bigDesktop: '0.8rem',
+    ...gap,
+  };
+
+  // let fontSize = {
+  //   phone: '0.3rem',
+  //   tabletPortrait: '0.4rem',
+  //   tabletLandscape: '0.5rem',
+  //   laptop: '0.5rem',
+  //   desktop: '0.6rem',
+  //   bigDesktop: '0.7rem',
+  // };
   const [loading, setLoading] = useState(true);
 
   const [style, setStyle] = useState({
+    // fontSize: '1rem',
     display: 'grid',
     gridTemplateColumns: 'repeat(3,1fr)',
     gap: '1rem',
@@ -37,8 +48,9 @@ export default function Grid({
       ) {
         setStyle({
           ...style,
+          // fontSize: `${columns.phone}rem`,
           gridTemplateColumns: `repeat(${columns.phone},1fr)`,
-          gap: gap.phone,
+          gap: gaps.phone,
         });
       } else if (
         window.innerWidth > parseInt(variables.phone) &&
@@ -46,8 +58,9 @@ export default function Grid({
       ) {
         setStyle({
           ...style,
+          // fontSize: `${columns.tabletPortrait}rem`,
           gridTemplateColumns: `repeat(${columns.tabletPortrait},1fr)`,
-          gap: gap.tabletPortrait,
+          gap: gaps.tabletPortrait,
         });
       } else if (
         window.innerWidth > parseInt(variables.tabletPortrait) &&
@@ -55,8 +68,9 @@ export default function Grid({
       ) {
         setStyle({
           ...style,
+          // fontSize: `${columns.tabletLandscape}rem`,
           gridTemplateColumns: `repeat(${columns.tabletLandscape},1fr)`,
-          gap: gap.tabletLandscape,
+          gap: gaps.tabletLandscape,
         });
       } else if (
         window.innerWidth > parseInt(variables.tabletLandscape) &&
@@ -64,8 +78,9 @@ export default function Grid({
       ) {
         setStyle({
           ...style,
+          // fontSize: `${columns.laptop}rem`,
           gridTemplateColumns: `repeat(${columns.laptop},1fr)`,
-          gap: gap.laptop,
+          gap: gaps.laptop,
         });
       } else if (
         window.innerWidth > parseInt(variables.laptop) &&
@@ -73,14 +88,16 @@ export default function Grid({
       ) {
         setStyle({
           ...style,
+          // fontSize: `${columns.desktop}rem`,
           gridTemplateColumns: `repeat(${columns.desktop},1fr)`,
-          gap: gap.desktop,
+          gap: gaps.desktop,
         });
       } else if (window.innerWidth > parseInt(variables.desktop)) {
         setStyle({
           ...style,
+          // fontSize: `${columns.bigDesktop}rem`,
           gridTemplateColumns: `repeat(${columns.bigDesktop},1fr)`,
-          gap: gap.bigDesktop,
+          gap: gaps.bigDesktop,
         });
       }
     }

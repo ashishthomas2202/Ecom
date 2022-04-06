@@ -10,6 +10,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 100;
     @include for-phone{
         padding-left:map-get($map: $page-padding, $key: phone );
         padding-right:map-get($map: $page-padding, $key: phone );
@@ -59,6 +60,7 @@
         justify-content: center;
         align-items: center;
         opacity: 1;
+        filter:drop-shadow(0 0 14px #00000010);
         transition: 0.2s ease-in;
         @media (hover: hover) {
             &:hover{

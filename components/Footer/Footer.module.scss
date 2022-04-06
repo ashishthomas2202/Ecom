@@ -6,7 +6,7 @@
 
     
     @include for-phone{
-        
+        min-width: $page-min-width;
         width: 100vw;
         position:fixed;
         bottom: 0;

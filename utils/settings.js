@@ -31,8 +31,8 @@ export const Header = {
       faIcon: 'fa-heart',
       container: {
         shape: 'round',
-        backgroundColor: variables.primaryColor,
-        color: '#ffffff',
+        backgroundColor: '#ffffff',
+        color: variables.primaryColor,
       },
     },
     {
@@ -41,8 +41,8 @@ export const Header = {
       faIcon: 'fa-bag-shopping',
       container: {
         shape: 'round',
-        backgroundColor: variables.secondaryColor,
-        color: '#ffffff',
+        backgroundColor: '#ffffff',
+        color: variables.secondaryColor,
       },
     },
   ],

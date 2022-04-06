@@ -11,6 +11,7 @@
     align-items: center;
 
     .container{
+        min-width:$page-min-width;
         width: $header-width;
         padding-top: $page-padding-top;
         display: flex;
